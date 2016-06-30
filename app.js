@@ -1,16 +1,15 @@
-// var jsonString = "{ \"foo\" : \"bar\"}";
-// console.log(typeof jsonString, jsonString);
-// console.log(jsonString.foo);
-//
-// var result = JSON.parse(jsonString);
-// console.log(typeof result, result);
-// console.log(result.foo);
-//
-// var stringified = JSON.stringify(result);
-// console.log(typeof stringified, stringified);
-//
-console.log('above $.ajax');
+var jsonString = "{ \"foo\" : \"bar\"}";
+console.log(typeof jsonString, jsonString);
+console.log(jsonString.foo);
 
+var result = JSON.parse(jsonString);
+console.log(typeof result, result);
+console.log(result.foo);
+
+var stringified = JSON.stringify(result);
+console.log(typeof stringified, stringified);
+
+console.log('above $.ajax');
 $.get('http://swapi.co/api/people')
   .then(function(data) {
 
@@ -25,11 +24,10 @@ $.get('http://swapi.co/api/people')
     console.log('An error occurred');
   }
 );
-
-
-
 console.log('below $.ajax');
 
+
+// Example of recursively requesting all of the people data from the API
 // $(function() {
 //   $.get('http://swapi.co/api/people/')
 //     .then(crawlApiForMoreData)
